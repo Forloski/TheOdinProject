@@ -19,7 +19,7 @@ body{
     padding-top: 10px;
     height: 92px;
     width: 272px;
-    display: flex;
+    display: flexbox;
     margin-bottom: 32px;
 }
 
@@ -82,20 +82,28 @@ input[type=text] {
     border-color: rgb(170, 170, 170);
 }
 
+.topNav{
+    display: flex;
+    justify-content: flex-end;
+}
+
 ul{
     list-style-type: none;
     margin: 10px;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
 }
 
 li {
-    float: right;
+    display: inline-flex;
 }
 
 li a{
     color: rgba(0,0,0,0.87);
     text-decoration: none;
     font-family: arial,sans-serif;
-    display: block;
     padding: 8px;
 }
 
@@ -120,4 +128,26 @@ li a:hover{
 
 #topNavLogin:hover{
     text-decoration: none;
+}
+
+footer{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    background-color: rgb(240, 240, 240);
+}
+
+.botNavLisstLeft{
+    list-style-type: none;
+    margin: 10px;
+    float: left;
+    margin-right: 30px
+}
+
+.botNavListRight{
+    list-style-type: none;
+    margin: 10px;
+    float: right;
+    margin-right: 30px
 }
