@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+
+<html>
+    <body>
+        <div class="container">
+            <h1 id="title">Pesquisa do Estudio da Géssica</h1>
+            <p id="description">Muito obrigado por preecher a pesquisa do Estudio 12</p>
+            <form id="survey-form">
+                <div class="form-group">
+                    <label id="name-label" for="name">Nome</label>
+                    <input type="text" id="name" placeholder="Entre seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label id="email-label" for="email">Email</label>
+                    <input type="email" id="email" placeholder="Entre seu email" required>
+                </div>
+                <div class="form-group">
+                    <label id="age-label" for="age">Idade</label>
+                    <input type="number" min="10" max="120" id="age" placeholder="Entre sua idade" required>                  
+                </div>
+                <div class="form-group">
+                    <label>Você recomendaria o Estudio 12 para seus amigos?</label><br>
+                    <label>
+                        <input type="radio" name="recommendFriend" value="definitely" checked>
+                        Certamente
+                    </label><br>
+                    <label>
+                        <input type="radio" name="recommendFriend" value="maybe">
+                        Talvez
+                    </label><br>
+                    <label>
+                        <input type="radio" name="recommendFriend" value="notSure">
+                        Não sei
+                    </label><br>
+                </div>
+                <div class="form-group">
+                    <label id="dropdown-label" for="dropdown">Qual a parte favorita do seu projeto?</label><br>
+                    <select name="dropdown" id="dropdown">
+                        <option value="estar">Sala de Estar</option>
+                        <option value="cozinha">Cozinha</option>
+                        <option value="quarto">Quarto</option>
+                        <option value="banheiro">Banheiro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="checkbox-label" for="checkbox">O que você quer que melhore?(Marque todos que se aplicam)</label><br>
+                        <input type="checkbox" id="cores" name="checkbox" value="cores">
+                        <label for="cores">Cores</label><br>
+                        <input type="checkbox" id="moveis" name="checkbox" value="moveis">
+                        <label for="moveis">Móveis</label><br>
+                        <input type="checkbox" id="paredes" name="checkbox" value="paredes">
+                        <label for="cores">Paredes</label><br>
+                        <input type="checkbox" id="atendimento" name="checkbox" value="atendimento">
+                        <label for="atendimento">Atendimento</label><br>
+                </div>
+                <div class="form-group">
+                    <label id="comments-label" for="comment">Qual a parte favorita do seu projeto?</label><br>
+                    <textarea id="comment" name="comment" rows="4" cols="55" placeholder="Insira seu comentário aqui..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit" class="submit-button">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

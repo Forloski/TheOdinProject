@@ -1,0 +1,15 @@
+.container{
+    background-color: rgb(219, 217, 217);
+    border-radius: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#survey-form{
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    margin: 5px 5px 10px 5px;
+}
+
