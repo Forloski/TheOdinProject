@@ -21,6 +21,18 @@ gridResetButton.addEventListener('click', function (e) {
 
 });
 
+gridColorBlackButton.addEventListener('click', function (e) {
+
+    eventListenerElementBlack();
+
+});
+
+gridColorRandomButton.addEventListener('click', function (e) {
+
+    eventListenerElementRandom();
+    
+});
+
 function getGridSize(){
     
     createGrid();
@@ -54,11 +66,11 @@ function createdGridElemnents(gridSize){
 
     };
 
-    eventListenerElement();
+    eventListenerElementBlack();
 
 }
 
-function eventListenerElement(){
+function eventListenerElementBlack(){
     
     let gridElementListener = document.querySelectorAll('.gridElement');
 
@@ -66,12 +78,35 @@ function eventListenerElement(){
 
         element.addEventListener('mouseover', function (e) {
 
-            element.style.backgroundColor = "black";
+            element.style.backgroundColor = `black`;
 
         });
    
     });
 
+}
+
+function eventListenerElementRandom(){
+    
+    let gridElementListener = document.querySelectorAll('.gridElement');
+
+    gridElementListener.forEach(element => {
+
+        element.addEventListener('mouseover', function (e) {
+
+            element.style.backgroundColor = `rgb(${random255()}, ${random255()}, ${random255()})`;;
+
+        });
+   
+    });
+
+}
+
+//
+
+function random255(){
+
+    return (Math.random()*255)+1;
 }
 
 function resetGrid(){
