@@ -1,124 +1,97 @@
 
-//let gridSizeButton = document.getElementById('gridSizeButton');
+// let gridSizeButton = document.getElementById('gridSizeButton');
 
-let gridContainer = document.getElementById('gridContainer');
+const gridContainer = document.getElementById('gridContainer')
+const gridSizeButton = document.getElementById('gridSizeButton')
+const gridResetButton = document.getElementById('gridResetButton')
+const gridColorBlackButton = document.getElementById('gridColorBlackButton')
+const gridColorRandomButton = document.getElementById('gridColorRandomButton')
 
-createGrid(16);
+
+createGrid(16)
 
 gridSizeButton.addEventListener('click', function (e) {
-
-    console.log(e);
-    resetGrid();
-    createGrid(getGridSize());
-
-});
+  console.log(e)
+  resetGrid()
+  createGrid(getGridSize())
+})
 
 gridResetButton.addEventListener('click', function (e) {
-
-    let gridSize = gridContainer.style.gridTemplateColumns.match(/^\d+|\d+\b|\d+(?=\w)/g);
-    resetGrid();
-    createGrid(gridSize[0]);
-
-});
+  const gridSize = gridContainer.style.gridTemplateColumns.match(/^\d+|\d+\b|\d+(?=\w)/g)
+  resetGrid()
+  createGrid(gridSize[0])
+})
 
 gridColorBlackButton.addEventListener('click', function (e) {
-
-    eventListenerElementBlack();
-
-});
+  eventListenerElementBlack()
+})
 
 gridColorRandomButton.addEventListener('click', function (e) {
+  eventListenerElementRandom()
+})
 
-    eventListenerElementRandom();
-    
-});
+function getGridSize () {
+  createGrid()
 
-function getGridSize(){
-    
-    createGrid();
+  do {
+    gridSize = prompt('Insira o tamanho do grid, de 20 a 120')
+  } while (gridSize < 20 || gridSize > 120)
 
-    do{
-        gridSize = prompt(`Insira o tamanho do grid, de 20 a 120`);
-    }while (gridSize < 20 || gridSize > 120)
-
-    return gridSize;
-
+  return gridSize
 }
 
-function createGrid(gridSize){
+function createGrid (gridSize) {
+  gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
+  gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`
 
-    gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-    createdGridElemnents(gridSize);
-
+  createdGridElemnents(gridSize)
 }
 
-function createdGridElemnents(gridSize){
+function createdGridElemnents (gridSize) {
+  gridSize *= gridSize
 
-    gridSize *= gridSize;
+  for (i = 0; i < gridSize; i++) {
+    const div = document.createElement('div')
+    div.classList.add('gridElement')
+    gridContainer.appendChild(div)
+  };
 
-    for( i=0; i < gridSize; i++ ) {
-
-        let div = document.createElement('div');
-        div.classList.add('gridElement');
-        gridContainer.appendChild(div);
-
-    };
-
-    eventListenerElementBlack();
-
+  eventListenerElementBlack()
 }
 
-function eventListenerElementBlack(){
-    
-    let gridElementListener = document.querySelectorAll('.gridElement');
+function eventListenerElementBlack () {
+  const gridElementListener = document.querySelectorAll('.gridElement')
 
-    gridElementListener.forEach(element => {
-
-        element.addEventListener('mouseover', function (e) {
-
-            element.style.backgroundColor = `black`;
-
-        });
-   
-    });
-
+  gridElementListener.forEach(element => {
+    element.addEventListener('mouseover', function (e) {
+      element.style.backgroundColor = 'black'
+    })
+  })
 }
 
-function eventListenerElementRandom(){
-    
-    let gridElementListener = document.querySelectorAll('.gridElement');
+function eventListenerElementRandom () {
+  const gridElementListener = document.querySelectorAll('.gridElement')
 
-    gridElementListener.forEach(element => {
-
-        element.addEventListener('mouseover', function (e) {
-
-            element.style.backgroundColor = `rgb(${random255()}, ${random255()}, ${random255()})`;;
-
-        });
-   
-    });
-
+  gridElementListener.forEach(element => {
+    element.addEventListener('mouseover', function (e) {
+      element.style.backgroundColor = `rgb(${random255()}, ${random255()}, ${random255()})`
+    })
+  })
 }
 
 //
 
-function random255(){
-
-    return (Math.random()*255)+1;
+function random255 () {
+  return (Math.random() * 255) + 1
 }
 
-function resetGrid(){
+function resetGrid () {
+  const gridElementListener = document.querySelectorAll('.gridElement')
 
-    let gridElementListener = document.querySelectorAll('.gridElement');
-
-    gridElementListener.forEach(element => {
-
-        gridContainer.removeChild(element);
-
-    });
+  gridElementListener.forEach(element => {
+    gridContainer.removeChild(element)
+  })
 }
 
-//grid-template-rows:    repeat(4, 1fr);
-//grid-template-columns: repeat(3, 1fr);
+// grid-template-rows:    repeat(4, 1fr);
+// grid-template-columns: repeat(3, 1fr);
