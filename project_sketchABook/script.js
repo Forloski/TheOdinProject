@@ -9,7 +9,6 @@ const gridResetButton = document.getElementById('gridResetButton');
 const gridColorBlackButton = document.getElementById('gridColorBlackButton');
 const gridColorRandomButton = document.getElementById('gridColorRandomButton');
 
-
 createGrid(16);
 
 gridSizeButton.addEventListener('click', function(e) {
