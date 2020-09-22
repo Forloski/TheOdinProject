@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+<link rel="stylesheet" href="reset.css">
+
+<html>
+  <body>
+    <h1 class="headerTitle">🕮 Candlekeep</h1>
+    <div class="bookTable">
+      <p>Title</p>
+      <p>Author</p>
+      <p>Pages</p>
+      <p>Read</p>
+      <p>Remove</p>
+      <a href="#" class="removeBook"> 🗑 </a>
+    </div>
+    <div id="addBackground"> 
+      <div class='formContainer' id="formContainer">
+        <div class="formGroup" id="title">
+          <h4>ADD NEW BOOK</h4>
+          <a class="btnClose" id="btnClose" href="#">&#10005</a>
+          <hr class="new1">
+        </div>
+        <div class="formGroup" id="bookTitleContainer">
+          <label for='bookTitleInput'>Book Title</label>
+          <input type='text' id="bookTitleInput">
+        </div>
+        <div class="formGroup">
+          <label for='bookAutorInput'>Autor Name</label>
+          <input type='text' id="bookAutorInput">
+        </div>
+        <div class="formGroup">
+          <label for='bookPagesInput'>Number of Pages</label>
+          <input type='number' id="bookPagesInput">
+        </div>
+        <div class="formGroup" id="readBook">
+          <label for="addPages">Have you read this book?</label>
+        </div>
+        <div class="formRead">
+          <input class="formReadInputRead" type="radio" name="read" id="addNotRead" value="not read" checked="">
+          <label class="formReadInputReadLabel" for="addNotRead">Yes</label>
+          &nbsp;
+          <input class="formReadInputRead" type="radio" name="read" id="addRead" value="read">
+          <label class="formReadInputReadLabel" for="addRead">No</label>
+        </div>
+        <div class="formGroup">
+          <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+        </div>
+        <div class="formGroup" id="submitBtnContainer">
+          <a class="btnClose" id="btnSubmit" href="#">SAVE BOOK</a>
+        </div>
+      </div>
+    </div>
+    <a href="#" id="addBookBtn" class="button"><span>🕮</span>Add Book</a>
+  </body>
+<script src="script.js"></script>
+</html>
