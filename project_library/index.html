@@ -5,13 +5,13 @@
 <html>
   <body>
     <h1 class="headerTitle">🕮 Candlekeep</h1>
-    <div class="bookTable">
+    <div class="bookTable" id="bookTable">
       <p>Title</p>
       <p>Author</p>
       <p>Pages</p>
       <p>Read</p>
       <p>Remove</p>
-      <a href="#" class="removeBook"> 🗑 </a>
+     
     </div>
     <div id="addBackground"> 
       <div class='formContainer' id="formContainer">
@@ -36,10 +36,10 @@
           <label for="addPages">Have you read this book?</label>
         </div>
         <div class="formRead">
-          <input class="formReadInputRead" type="radio" name="read" id="addNotRead" value="not read" checked="">
+          <input class="formReadInputRead" type="radio" name="read" id="addNotRead" value="read" checked="">
           <label class="formReadInputReadLabel" for="addNotRead">Yes</label>
           &nbsp;
-          <input class="formReadInputRead" type="radio" name="read" id="addRead" value="read">
+          <input class="formReadInputRead" type="radio" name="read" id="addRead" value="notRead">
           <label class="formReadInputReadLabel" for="addRead">No</label>
         </div>
         <div class="formGroup">

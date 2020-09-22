@@ -259,7 +259,7 @@ hr.new1 {
 }
 
 #addBackground {
-  display: block;
+  display: none;
   position: fixed;
   overflow-y: scroll;
   top: 0;
