@@ -9,3 +9,31 @@
   height: 20px;
   width: 20px;
 }
+
+#wrapper {
+  display: flex;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+#endScreen {
+  position: relative;
+  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  background-color:rgb(77, 143, 187);
+  border-radius: 5px;
+  color:rgb(255,255,255);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
