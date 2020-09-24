@@ -1,17 +1,36 @@
+.title{
+  display:flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 13.2em;
+  justify-content: center;
+}
+
+.gridContainer{
+  margin-left: auto;
+  margin-right: auto;
+  width: 16.5em
+}
+
 .grid{
   display: grid;
-  grid-template-columns:  repeat(3, 30px);
-  grid-template-rows: repeat(3, 30px);
+  grid-template-columns:  repeat(3, 90px);
+  grid-template-rows: repeat(3, 90px);
 }
 
 .playCell{
+  display:flex;
   background-color: green;
-  height: 20px;
-  width: 20px;
+  height: 85px;
+  width: 85px;
+  font-family:sans-serif;
+  font-size: 100px;
+  color: white;
+  justify-content: center;
 }
 
 #wrapper {
-  display: flex;
+  display: none;
   position: fixed;
   overflow-y: scroll;
   top: 0;
@@ -37,3 +56,7 @@
   letter-spacing: 1px;
 }
 
+.turnText{
+  display:inline-block;
+  width: auto;
+}

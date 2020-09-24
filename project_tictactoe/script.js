@@ -1,10 +1,15 @@
 'use strict';
 
+/* Adicionar vs AI
+  Adicionar inserir nome
+  adicionar botão de reiniciar jogo
+*/
+
 const gameBoard = (function() {
   const state = [];
   const board = document.getElementById('grid');
 
-  const _createTable = (() => {
+  const createTable = (() => {
     for (let i = 0; i < 9; i++) {
       let playCell = document.createElement('a');
 
@@ -16,7 +21,7 @@ const gameBoard = (function() {
     }
   })();
 
-  const _createState = (() => {
+  const createState = (() => {
     for (let i = 0; i < 9; i++) {
       state.push('');
     }
@@ -34,6 +39,7 @@ const displayController = (() => {
     if (e.target.className.includes('playCell')) {
       let number = e.target.id[4];
       playerTurn(number);
+      updateTurn();
     }
   });
 
@@ -41,14 +47,38 @@ const displayController = (() => {
     if (gameBoard.state[number] !== '') return;
     if (turnCounter % 2 != 0 ) {
       player1.play(number);
-      checkWin();
-      checkTie();
+      if (checkWin()) showWinScreen(1);
+      if (checkTie()) showWinScreen(3);
       return ++turnCounter;
     } else {
       player2.play(number);
-      checkWin();
-      checkTie();
+      if (checkWin()) showWinScreen(2);
+      if (checkTie()) showWinScreen(3);
       return ++turnCounter;
+    }
+  };
+
+  const showWinScreen = (number) => {
+    const winText = document.getElementById('endText');
+
+    document.getElementById('wrapper').style.display = 'block';
+
+    if (number === 1) {
+      winText.innerHTML = 'Player 1 Wins';
+    } else if (number === 2) {
+      winText.innerHTML = 'Player 2 Wins';
+    } else if (number === 3) {
+      winText.innerHTML = 'TIE';
+    }
+  };
+
+  const updateTurn = () => {
+    const turnText = document.getElementById('turnText');
+
+    if (turnText.innerHTML === 'Player 1 (X) Turn') {
+      turnText.innerHTML = 'Player 2 (O) Turn';
+    } else {
+      turnText.innerHTML = 'Player 1 (X) Turn';
     }
   };
 
@@ -99,7 +129,6 @@ const player = (player, symbol, name) => {
 
   return {play};
 };
-
 
 const player1 = player('human', 'X', 'Jogador1');
 const player2 = player('human', 'O', 'Jogador2');
