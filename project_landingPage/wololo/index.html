@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+  <script src="main.js"></script>
+ </head>
+ <body>
+  <header>
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">ABOUT</a></li>
+    <p id="logo">/_</p>
+    <li><a href="#">PROJECTS</a></li>
+    <li><a href="#">CONTACT</a></li>
+  </header>
+  <div id="content"> 
+    <p>WE TAKE CARE OF YOU<br>BY TAKING CARE OF YOUR HOME</p>
+  </div>
+  <footer>
+    <p id="footerText">Made by FOrloski for TOP</p>
+  </footer>
+ </body>
+</html>
+
+function header() {
+  const header = document.createElement("header");
+  
+  // Company Logo
+  const companyLogo = document.createElement("div");
+  companyLogo.classList.add("company-logo");
+  companyLogo.innerHTML = `Salted Slate Pizza &nbsp;<i class="fas fa-pizza-slice"></i>`;
+  header.appendChild(companyLogo);
+
+  // Tabs
+  const ul = document.createElement("ul");
+  ul.innerHTML = `
+  <li class="tab" data-index="home">Home</li>
+  <li class="tab" data-index="menu">Menu</li>
+  <li class="tab" data-index="about">About</li>
+  <li class="tab" data-index="contact">Contact</li>
+  `;
+  header.appendChild(ul);
+
+  return header;
+}
+
+export default header;

@@ -147,6 +147,7 @@ hr.new1 {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
 
+
 .formRead{
   padding: 10px 20px 10px 20px;
 }
